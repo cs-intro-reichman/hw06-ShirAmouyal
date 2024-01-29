@@ -97,10 +97,10 @@ public class Runigram {
 		int cols=image[0].length;
 		Color[][] Nimage = new Color[rows][cols];
 		for(int i=0;i<rows;i++){
-			int c=image[0].length;
+			
 			for(int k=0;k<cols;k++){
-				c--;
-				Nimage[i][k]= image[i][c];
+				
+				Nimage[i][k]= image[i][cols-1-k];
 			}
 		}
 		return Nimage;
@@ -110,10 +110,9 @@ public class Runigram {
 		int cols=image[0].length;
 		Color[][] Nimage = new Color[rows][cols];
 		for(int i=0;i<rows;i++){
-			int c=image.length;
 			for(int k=0;k<=cols;k++){
-				c--;
-			 Nimage[i][k]=image[c][k];	
+				
+			 Nimage[i][k]=image[(rows-1)-i][k];	
 			}
 		}
 		return Nimage;
@@ -146,15 +145,9 @@ public class Runigram {
 		Color[][] NewScaled=new Color[height][width];
 		int Nheight=image.length;
 		int Nwidth=image[0].length;
-        double scaledWidth=(double) (Nwidth)/width;
-		double scaledHeight=(double)(Nheight)/height;
-		double I;
-		double J;
 		for(int i=0;i<height;i++){
 			for(int k=0;k<width;k++){
-             I=i*scaledHeight;
-			 J=k*scaledWidth;
-			 NewScaled[i][k]=image[(int)I][(int)J];
+             NewScaled[i][k]=image[i*Nheight/height][k*Nwidth/width];
 			}
 		}
 		return NewScaled;
@@ -176,7 +169,7 @@ public class Runigram {
 		int newRed=(int)((red1*alpha)+((1-alpha)*red2));
 		int newBlue=((int)((blue1*alpha)+(1-alpha)*blue2));
 		int newGreen=((int)((green1*alpha)+(1-alpha)*green2));
-		Color col=new Color(newRed,newBlue,newGreen);
+		Color col=new Color(newRed,newGreen,newBlue);
 		return col;
 
 	}
