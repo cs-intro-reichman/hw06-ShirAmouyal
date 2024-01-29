@@ -34,9 +34,6 @@ public class Runigram {
 		imageOut4=scaled(tinypic, 3, 5);
 		System.out.println();
 		print(imageOut4);
-
-		
-		
 	}
 
 	/** Returns a 2D array of Color values, representing the image data
@@ -110,9 +107,9 @@ public class Runigram {
 		int cols=image[0].length;
 		Color[][] Nimage = new Color[rows][cols];
 		for(int i=0;i<rows;i++){
-			for(int k=0;k<=cols;k++){
+			for(int k=0;k<cols;k++){
 				
-			 Nimage[i][k]=image[(rows-1)-i][k];	
+			 Nimage[i][k]=image[(rows-1)-i][k];
 			}
 		}
 		return Nimage;
@@ -167,11 +164,10 @@ public class Runigram {
 		int green2=c2.getGreen();
 		int blue2=c2.getBlue();
 		int newRed=(int)((red1*alpha)+((1-alpha)*red2));
-		int newBlue=((int)((blue1*alpha)+(1-alpha)*blue2));
-		int newGreen=((int)((green1*alpha)+(1-alpha)*green2));
+		int newBlue=(int)((blue1*alpha)+((1-alpha)*blue2));
+		int newGreen=(int)((green1*alpha)+((1-alpha)*green2));
 		Color col=new Color(newRed,newGreen,newBlue);
 		return col;
-
 	}
 	
 	/**
@@ -237,4 +233,3 @@ public class Runigram {
 
 	}
 }
-
