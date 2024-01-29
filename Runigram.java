@@ -111,7 +111,7 @@ public class Runigram {
 		Color[][] Nimage = new Color[rows][cols];
 		for(int i=0;i<rows;i++){
 			int c=image.length;
-			for(int k=0;k<cols;k++){
+			for(int k=0;k<=cols;k++){
 				c--;
 			 Nimage[i][k]=image[c][k];	
 			}
@@ -241,7 +241,7 @@ public class Runigram {
 			}
 		}
 		StdDraw.show();
-		
+
 	}
 }
 
